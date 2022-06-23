@@ -1,0 +1,14 @@
+{
+  "name": "forta-jest",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/react": "^12.1.5",
+    "@types/jest": "^28.1.1",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.6.3"
+  }
+}
