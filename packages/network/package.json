@@ -31,8 +31,9 @@
   },
   "scripts": {
     "start": "vite playground",
-    "build": "tsc && vite build",
-    "test": "jest"
+    "build": "vite build",
+    "test": "jest",
+    "roll": "./roll.sh"
   },
   "devDependencies": {
     "forta-jest": "*",
