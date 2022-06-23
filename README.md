@@ -1,6 +1,6 @@
 # Forta
 
-This repo contains the codebase for [@forta](https://forta.vercel.app) modules. All modules live under [/pacakges](./packages/) folder.
+This repo contains the codebase for [@forta](https://forta.vercel.app) modules. All modules live under [/packages](./packages/) folder.
 
 **FORTA** is a set of atomic wrappers & helper functions for the Web3 Space.
 
