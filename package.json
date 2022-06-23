@@ -4,9 +4,11 @@
     "packages/*"
   ],
   "scripts": {
+    "test": "turbo run test",
     "clean:all": "./scripts/clean-all.sh",
-    "build": "turbo run build",
-    "network": "turbo run --filter=network dev"
+    "build:network": "turbo run --filter=network build",
+    "start:network": "turbo run --filter=network start",
+    "test:network": "turbo run --filter=network test"
   },
   "devDependencies": {
     "turbo": "latest"
