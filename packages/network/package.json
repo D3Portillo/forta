@@ -1,6 +1,6 @@
 {
   "name": "@forta/network",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": {
     "name": "Denny Portillo"
@@ -13,6 +13,7 @@
     "crypto",
     "web3"
   ],
+  "description": "🌤️ A goodie to get chains common metadata.",
   "bugs": {
     "url": "https://github.com/D3Portillo/forta/issues"
   },

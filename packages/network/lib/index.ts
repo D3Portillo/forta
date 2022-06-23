@@ -179,6 +179,39 @@ export const IoTeX = new Chain(
   "IOTX"
 )
 
+export const Gnosis = new Chain(
+  100,
+  "0x64",
+  "Gnosis",
+  "Gnosis Chain",
+  rpc("rpc.xdaichain.com"),
+  exp("blockscout.com/xdai/mainnet"),
+  MAINNET,
+  "xDAI"
+)
+
+export const Moonriver = new Chain(
+  1285,
+  "0x505",
+  "Moonriver",
+  "Moonriver Chain",
+  rpc("moonriver.public.blastapi.io"),
+  exp("moonriver.moonscan.io"),
+  MAINNET,
+  "MOVR"
+)
+
+export const Fuse = new Chain(
+  122,
+  "0x7a",
+  "Fuse",
+  "Fuse Mainnet",
+  rpc("rpc.fuse.io"),
+  exp("explorer.fuse.io"),
+  MAINNET,
+  "FUSE"
+)
+
 export { NetworkList }
 export function getExplorerURL(
   txOrAddrr: string,

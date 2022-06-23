@@ -21,4 +21,6 @@ export const Avalanche: Network
 export const Binance: Network
 export const Aurora: Network
 export const IoTeX: Network
-export const PaloAlto: Network
+export const Gnosis: Network
+export const Moonriver: Network
+export const Fuse: Network

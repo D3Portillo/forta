@@ -10,7 +10,7 @@ describe("network", () => {
   it("No same Network IDs", () => {
     expect(foundSimilar(NETWORK_IDS)).toBeFalsy()
     expect(foundSimilar(NETWORK_DECIMAL_IDS)).toBeFalsy()
-    expect(NETWORK_DECIMAL_IDS.length).toBe(12)
+    expect(NETWORK_DECIMAL_IDS.length).toBe(15)
   })
 
   it("[Polygon,Matic].getExplorerURL -eq polygonscan.com", () => {
