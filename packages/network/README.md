@@ -4,7 +4,7 @@
   <img src="https://raw.githubusercontent.com/D3Portillo/usemetamask/master/assets/logo.png">
 </p>
 
-<p align="center">An ether blockchain goodie to fetch network's common metadata.</p>
+<p align="center">🌩️ A goodie to get most common chains metadata.</p>
 
 <p align="center">
   <a
