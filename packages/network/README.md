@@ -44,7 +44,7 @@ console.log(Rinkeby.getExplorerURL(ADDRR))
 
 Each exported network(Mainnet or Testnet) follows the model bellow:
 
-```
+```ts
 export type NetworkType = "Mainnet" | "Testnet"
 export interface NetworkProps {
   chainName: string
