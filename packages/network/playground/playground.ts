@@ -1,14 +1,7 @@
-import { Rinkeby, Mainnet, Kovan, getExplorerURL, NetworkList } from "../lib"
+import { Rinkeby, Mainnet, NetworkList, getExplorerURL } from "../lib"
 
-console.log({ Rinkeby, Mainnet, NetworkList })
-console.log(
-  Rinkeby.getExplorerURL("0x3c0e20fca6d2e084127d056377a5f35294503447"),
-  Kovan.getExplorerURL(
-    "0x04c5dafc308dd8956fae87eb878e691bdc7afa866784e9ba7ecd5b4d7ef90f2f"
-  ),
-  getExplorerURL(
-    "0x3c0e20fca6d2e084127d056377a5f35294503447",
-    Rinkeby.chainDecimalId
-  )
+const URL = getExplorerURL(
+  "0x6635F83421Bf059cd8111f180f0727128685BaE4",
+  Rinkeby.chainId
 )
-export {}
+console.log({ URL, Rinkeby, Mainnet, NetworkList })
