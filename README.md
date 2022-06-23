@@ -1,14 +1,12 @@
 # Forta
 
-FORTA is a set of atomic wrappers & helper functions for the Web3 Space.
+This repo contains the codebase for [@forta](https://forta.vercel.app) modules. All modules live under [/pacakges](./packages/) folder.
 
----
+**FORTA** is a set of atomic wrappers & helper functions for the Web3 Space.
 
-This repo contains the codebase for [forta]() modules and nano-modules. Take a look to [/pacakges](./packages/) for reference.
-
-## Modules
+## Modules List
 
 - [useMetamask](https://github.com/D3Portillo/usemetamask)
 - [@forta/network](./packages/network/)
 
-> All this repo is under the MIT License, do whatever you want with it 🥰
+**Note:** All this repo is under the MIT License, do whatever you want with it 🥰
