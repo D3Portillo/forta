@@ -1,0 +1,42 @@
+{
+  "name": "@forta/network",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Denny Portillo"
+  },
+  "keywords": [
+    "forta",
+    "metamask",
+    "chain",
+    "wallet",
+    "crypto",
+    "web3"
+  ],
+  "bugs": {
+    "url": "https://github.com/D3Portillo/forta/issues"
+  },
+  "homepage": "https://forta.vercel.app/network",
+  "repository": "D3Portillo/forta",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "scripts": {
+    "start": "vite playground",
+    "build": "tsc && vite build",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "forta-jest": "*",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  }
+}
