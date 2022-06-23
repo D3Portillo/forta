@@ -1,14 +1,5 @@
-type NetworkType = "Mainnet" | "Testnet"
-interface NetworkProps {
-  chainName: string
-  shortName: string
-  chainId: string
-  chainDecimalId: number
-  currency: string
-  rpcUrl: string
-  blockExplorerUrl: string
-  type: NetworkType
-}
+import { Network, NetworkProps, NetworkType } from "./shared.d"
+
 type URL_RPC = "URL_RPC"
 type URL_EXPLORER = "URL_EXPLORER"
 
@@ -24,7 +15,7 @@ const internalGetExplorerURL = (explorer: string, txOrAddrr: string) => {
   return `${explorer}/tx/${txOrAddrr}`
 }
 
-class Network implements NetworkProps {
+class Chain implements Network {
   chainName = ""
   chainDecimalId = 0
   chainId = ""
@@ -59,11 +50,11 @@ class Network implements NetworkProps {
     NetworkList.push(props)
   }
   getExplorerURL = (txOrAddrr: string): string => {
-    return internalGetExplorerURL(this.rpcUrl, txOrAddrr)
+    return internalGetExplorerURL(this.blockExplorerUrl, txOrAddrr)
   }
 }
 
-export const Mainnet = new Network(
+export const Mainnet = new Chain(
   1,
   "0x1",
   "Mainnet",
@@ -73,7 +64,7 @@ export const Mainnet = new Network(
   MAINNET
 )
 
-export const Ropsten = new Network(
+export const Ropsten = new Chain(
   3,
   "0x3",
   "Ropsten",
@@ -82,7 +73,7 @@ export const Ropsten = new Network(
   exp("ropsten.etherscan.io")
 )
 
-export const Rinkeby = new Network(
+export const Rinkeby = new Chain(
   4,
   "0x4",
   "Rinkeby",
@@ -91,7 +82,7 @@ export const Rinkeby = new Network(
   exp("rinkeby.etherscan.io")
 )
 
-export const Goerli = new Network(
+export const Goerli = new Chain(
   5,
   "0x5",
   "Goerli",
@@ -100,7 +91,7 @@ export const Goerli = new Network(
   exp("goerli.etherscan.io")
 )
 
-export const Kovan = new Network(
+export const Kovan = new Chain(
   42,
   "0x2a",
   "Kovan",
@@ -109,7 +100,7 @@ export const Kovan = new Network(
   exp("kovan.etherscan.io")
 )
 
-export const Polygon = new Network(
+export const Polygon = new Chain(
   137,
   "0x89",
   "Matic",
@@ -122,7 +113,7 @@ export const Polygon = new Network(
 
 export const Matic = Polygon
 
-export const Celo = new Network(
+export const Celo = new Chain(
   42220,
   "0xa4ec",
   "Celo",
@@ -133,7 +124,7 @@ export const Celo = new Network(
   "CELO"
 )
 
-export const Fantom = new Network(
+export const Fantom = new Chain(
   250,
   "0xfa",
   "Fantom",
@@ -144,7 +135,7 @@ export const Fantom = new Network(
   "FTM"
 )
 
-export const Avalanche = new Network(
+export const Avalanche = new Chain(
   43114,
   "0xa86a",
   "Avalanche",
@@ -155,7 +146,7 @@ export const Avalanche = new Network(
   "AVAX"
 )
 
-export const Binance = new Network(
+export const Binance = new Chain(
   56,
   "0x38",
   "Binance",
@@ -166,7 +157,7 @@ export const Binance = new Network(
   "BNB"
 )
 
-export const Aurora = new Network(
+export const Aurora = new Chain(
   1313161554,
   "0x4e454152",
   "Aurora",
@@ -177,7 +168,7 @@ export const Aurora = new Network(
   "AURORA"
 )
 
-export const IoTeX = new Network(
+export const IoTeX = new Chain(
   4689,
   "0x1251",
   "IoTeX",
@@ -191,16 +182,12 @@ export const IoTeX = new Network(
 export { NetworkList }
 export function getExplorerURL(
   txOrAddrr: string,
-  networkOrChainId: string | number | Network
+  chainId: string | number
 ): string | null {
-  if (["number", "string"].includes(typeof networkOrChainId)) {
-    const chain = NetworkList.find(
-      (network) =>
-        network.chainDecimalId === parseInt(networkOrChainId as string)
-    )
-    return chain
-      ? internalGetExplorerURL(chain.blockExplorerUrl, txOrAddrr)
-      : null
-  }
-  return (networkOrChainId as Network).getExplorerURL(txOrAddrr)
+  const chain = NetworkList.find(
+    (network) => network.chainDecimalId === parseInt(chainId as string)
+  )
+  return chain
+    ? internalGetExplorerURL(chain.blockExplorerUrl, txOrAddrr)
+    : null
 }
