@@ -1,6 +1,6 @@
 {
   "name": "@forta/network",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "author": {
     "name": "Denny Portillo"
@@ -30,6 +30,7 @@
       "require": "./dist/index.umd.js"
     }
   },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "start": "vite playground",
     "build": "vite build",
